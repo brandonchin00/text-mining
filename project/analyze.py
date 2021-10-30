@@ -20,6 +20,7 @@ def word_count():
     return numbers
 print('Total number of words:', word_count())
 
+'''this would check the frequency of the words in the text file'''
 def freq():
     d = dict() #creates an empty dictionary
     words=[]
@@ -41,14 +42,13 @@ def freq():
     return (d)
 
 #freq()
-'''this would check the frequency of the words in the text file'''
 
-def top_count(d):
-    from collections import Counter
-    counter = Counter(d)
-    print (counter)
+def natural_word():
+    from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
-top_count()
+
+
+
 
 
 
