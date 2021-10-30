@@ -45,10 +45,21 @@ def freq():
 
 def natural_word():
     from nltk.sentiment.vader import SentimentIntensityAnalyzer
+    with open('data/Democratic_Party_(United_States).txt','r') as f:
+        for line in f:
+            score = SentimentIntensityAnalyzer().polarity_scores(line)
+            print(score)
+#natural_word()
 
+def similarity():
+    import thefuzz
+    from thefuzz import fuzz
+    with open('data/Democratic_Party_(United_States).txt','r') as f:
+        for line in f:
+            fuzz.ratio(f)
 
-
-
+similarity()
+            
 
 
 
