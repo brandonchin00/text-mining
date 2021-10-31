@@ -13,7 +13,7 @@ numbers = 0 #this is the variable for the number of words in the text
 def word_count():
     """Returns the total of the frequencies in a histogram."""
     print("fp",fp)
-
+    
     text = fp.read()
     words = text.split()
     numbers = len(words)
@@ -37,10 +37,9 @@ def freq():
         if word in d:
             d[word] = d[word] + 1
         else:
-            d[word] = 1
+            d[word] = 0
     print (d)
     return (d)
-
 #freq()
 
 def natural_word():
@@ -52,13 +51,18 @@ def natural_word():
 #natural_word()
 
 def similarity():
-    import thefuzz
     from thefuzz import fuzz
-    with open('data/Democratic_Party_(United_States).txt','r') as f:
-        for line in f:
-            fuzz.ratio(f)
+    fp = open('data/Democratic_Party_(United_States).txt', encoding='utf-8')
+    fp = fp.read()
+    cp = open('data/Communism.txt', encoding='utf-8')
+    cp = cp.read()
+    for line in cp and fp:
+        ratio = fuzz.ratio(cp, fp)
+        print (ratio)
+#similarity() 
+#I'm not sure how this function works because it just prints out 3
 
-similarity()
+
             
 
 

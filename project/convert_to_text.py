@@ -4,7 +4,11 @@ import requests
 #import the necessary modules
 
 '''this will search for the appropriate wikipedia article and request to download the file'''
-wiki_page = 'Democratic_Party_(United_States)' 
+#wiki_page = 'Democratic_Party_(United_States)' 
+#response = requests.get(f'https://en.wikipedia.org/wiki/{wiki_page}')
+#this is for the democractic party article that I wanted to convert
+
+wiki_page = 'Communism' 
 response = requests.get(f'https://en.wikipedia.org/wiki/{wiki_page}')
 
 response.raise_for_status() #this will return error if the article is not found
